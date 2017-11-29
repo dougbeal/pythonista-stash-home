@@ -1,4 +1,4 @@
-
+echo "ENV settings ${REMOTE_USERNAME} ${REMOTE_TARGET} ${MOBILE}"
 SSH_FILENAME="stash-pythonista-${MOBILE}"
 sshdir="${STASH_ROOT}/.ssh"
 tempdir="${STASH_ROOT}/temp"
