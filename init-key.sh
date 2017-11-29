@@ -1,7 +1,7 @@
 
 SSH_FILENAME="stash-pythonista-${MOBILE}"
-sshdir="$STASH_ROOT/.ssh"
-tempdir="$STASH_ROOT/temp"
+sshdir="${STASH_ROOT}/.ssh"
+tempdir="${STASH_ROOT}/temp"
 files="stash-pythonista*"
 echo "Settings ${SSH_FILENAME) ${files} sshdir ${sshdir} tempdir ${tempdir}"
 
