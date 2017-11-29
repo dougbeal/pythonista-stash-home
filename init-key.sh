@@ -5,15 +5,15 @@ echo ${keyfile_prefix}
 keyfile_glob="stash-pythonista*"
 echo ${keyfile_glob}
 
-echo "Settings ${keyfile_prefix) ${keyfile_glob}"
+#echo "Settings ${keyfile_prefix) ${keyfile_glob}"
 
 sshdir="${STASH_ROOT}/.ssh"
 echo ${sshdir}
 tempdir="${STASH_ROOT}/temp"
 echo ${tempdir}
 
-echo "Settings ${keyfile_prefix) ${keyfile_glob}"
-echo "Directories sshdir ${sshdir} tempdir ${tempdir}"
+#echo "Settings ${keyfile_prefix) ${keyfile_glob}"
+#echo "Directories sshdir ${sshdir} tempdir ${tempdir}"
 
 mkdir -p "{sshdir}"
 # scp cannot find key so it will prompt user for password
