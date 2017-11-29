@@ -14,12 +14,13 @@ mkdir -p "${sshdir}"
 # scp cannot find key so it will prompt user for password
 mkdir -p "${tempdir}"
 
-
+echo "ssh-keygen"
 ssh-keygen -t dsa -f ${keyfile_prefix}
 ls "${sshdir}/${keyfile_glob}"
 mv "${sshdir}/${keyfile_glob}" "${tempdir}"
 ls "${sshdir}/${keyfile_glob}"
 
+echo "scp"
 scp ${keyfile_glob} ${REMOTE_USERNAME}@${REMOTE_TARGET}:~/.ssh/
 
 mv "${tempdir}/${keyfile_glob}" "${sshdir}"
