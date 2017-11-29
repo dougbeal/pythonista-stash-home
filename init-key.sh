@@ -6,6 +6,7 @@ echo ${sshdir}
 tempdir="${STASH_ROOT}/temp"
 echo ${tempdir}
 keyfiles="stash-pythonista*"
+echo ${keyfiles}
 echo "Settings ${sshdir) ${keyfiles} sshdir ${sshdir} tempdir ${tempdir}"
 
 mkdir -p "${sshdir}"
