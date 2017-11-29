@@ -3,14 +3,14 @@ echo "ENV settings ${REMOTE_USERNAME} ${REMOTE_TARGET} ${MOBILE}"
 keyfile_prefix="stash-pythonista-${MOBILE}"
 echo "keyfile_prefix ${keyfile_prefix}"
 keyfile_glob="stash-pythonista*"
-echo ${keyfile_glob}
+echo "keyfile_glob ${keyfile_glob}"
 
 sshdir="${STASH_ROOT}/.ssh"
-echo ${sshdir}
+echo "sshdir ${sshdir}"
 tempdir="${STASH_ROOT}/temp"
-echo ${tempdir}
+echo "tempdir ${tempdir}"
 
-mkdir -p "{sshdir}"
+mkdir -p "${sshdir}"
 # scp cannot find key so it will prompt user for password
 mkdir -p "${tempdir}"
 cd "${tempdir}"
