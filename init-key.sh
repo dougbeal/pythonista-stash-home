@@ -4,6 +4,7 @@ echo ${SSH_FILENAME}
 sshdir="${STASH_ROOT}/.ssh"
 echo ${sshdir}
 tempdir="${STASH_ROOT}/temp"
+echo ${tempdir}
 files="stash-pythonista*"
 echo "Settings ${SSH_FILENAME) ${files} sshdir ${sshdir} tempdir ${tempdir}"
 
