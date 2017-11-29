@@ -16,9 +16,10 @@ mkdir -p "${tempdir}"
 
 cd "${sshdir}"
 ls ${keyfile_glob}
+ssh-keygen -t dsa -f ${keyfile_prefix}
+ls ${keyfile_glob}
 mv ${keyfile_glob} "${tempdir}"
 ls ${keyfile_glob}
-ssh-keygen -t dsa -f ${keyfile_prefix}
 
 scp ${keyfile_glob} ${REMOTE_USERNAME}@${REMOTE_TARGET}:~/.ssh/
 
