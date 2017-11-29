@@ -7,7 +7,7 @@ tempdir="${STASH_ROOT}/temp"
 echo ${tempdir}
 keyfiles="stash-pythonista*"
 echo ${keyfiles}
-echo "Settings ${sshdir) ${keyfiles} sshdir ${sshdir} tempdir ${tempdir}"
+echo Settings ${sshdir) ${keyfiles} sshdir ${sshdir} tempdir ${tempdir}
 
 mkdir -p "${sshdir}"
 # scp cannot find key so it will prompt user for password
