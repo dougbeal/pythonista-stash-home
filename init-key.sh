@@ -15,7 +15,7 @@ mkdir -p "${sshdir}"
 mkdir -p "${tempdir}"
 
 echo "ssh-keygen"
-ssh-keygen -t dsa -f ${keyfile_prefix}
+ssh-keygen -t rsa -b 4048 -f ${keyfile_prefix}
 ls ${sshdir}/${keyfile_glob}
 mv ${sshdir}/${keyfile_glob} ${tempdir}
 ls ${sshdir}/${keyfile_glob}
