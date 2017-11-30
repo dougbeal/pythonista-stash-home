@@ -1,4 +1,4 @@
-source ~/Documents/sensitive.sh
+source ~/Documents/pythonista-stash-home/sensitive.sh
 echo "ENV settings ${REMOTE_USERNAME} ${REMOTE_TARGET} ${MOBILE}"
 
 keyfile_prefix="stash-pythonista-${MOBILE}"
