@@ -29,24 +29,36 @@ settings_dict = {
 # open up 'settings_dict.json' in Pythonist to see your data
 # turn off, reboot, etc. your iOS device
 # several minutes, hours, days, months later, you can run:
+settings_file_path = os.path.join(directory, settings_file_name)
+try:
+    try: 
+        with open(settings_file_path) as in_file:
+            settings_dict = json.load(in_file)  # your data has been read in from file into a new dict
+    except IOError:
+        settings_dict = {}
+        
 
-try: 
-    with open(os.path.join(directory, settings_file_name)) as in_file:
-        settings_dict = json.load(in_file)  # your data has been read in from file into a new dict
-except IOError:
-    settings_dict = None
-
-
-name = None
-
-if settings_dict and settings_dict['local'] and settings_dict['local']['ios_device_name']:
-    name = settings_dict['local']['ios_device_name']
-else:
-    name = dialogs.text_dialog(title='name this device', text='')
-
-print name
     
-#os.path.isfile(path)    
-print(new_dict)
+    name = None
+        
+    local = None
 
-_stash('ls')
+    if not local:
+        local = {}
+        settings_dict['local'] = local
+
+    if local['ios_device_name']:
+        name = local['ios_device_name']
+    else:
+        name = dialogs.text_dialog(title='name this device', text='')
+        local['ios_device_name'] = name
+
+    print name
+    
+    #os.path.isfile(path)    
+    print(settings_dict)
+
+    _stash('ls')
+finally:
+    with open(settings_file_path, 'w') as out_file:
+        json.dump(settings_dict, out_file)
