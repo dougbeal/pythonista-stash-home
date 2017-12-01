@@ -39,8 +39,8 @@ except IOError:
 
 name = None
 
-with settings_dict['local']['ios_device_name'] as sname:
-    name = sname
+if settings_dict and settings_dict['local'] and settings_dict['local']['ios_device_name']:
+    name = settings_dict['local']['ios_device_name']
 else
     name - dialogs.text_dialog(title='name this device',fields=[{'type':'text','title':'name'}])
 
