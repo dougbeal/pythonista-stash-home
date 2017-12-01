@@ -50,7 +50,7 @@ try:
     if 'ios_device_name' in local:
         name = local['ios_device_name']
     else:
-        name = dialogs.text_dialog(title='name this device', text='').lower()
+        name = dialogs.edit_list_dialog(title='name this device', text='').lower()
         local['ios_device_name'] = name
 
     items = [
