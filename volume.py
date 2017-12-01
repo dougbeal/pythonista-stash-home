@@ -1,17 +1,20 @@
 # coding: utf-8
+
 import dialogs
 import json
 import ui
+import os
 
-directory = '~/Documents/pythonista-stash-home/'
+directory = '~/Documents/pythonista-stash-home'
 settings_file_name = 'settings_dict.json'
 
 settings_dict = {
-    'remote_machines' :
-    'machine_name_a'    : {
-        'username': 'auser',
-        'address': 'ipaddress.0.0.1'
-    }
+    'remote_machines' : {
+        'machine_name_a'    : {
+            'username': 'auser',
+            'address': 'ipaddress.0.0.1'
+        }
+    },
     'local': {
         'ios_device_name' : 'my_iphone_x'
         }
@@ -27,8 +30,9 @@ settings_dict = {
 # turn off, reboot, etc. your iOS device
 # several minutes, hours, days, months later, you can run:
 
-with open(file_name) as in_file:
+with open(os.path.join(directory, settings_file_name) as in_file:
     new_dict = json.load(in_file)  # your data has been read in from file into a new dict
+
 
 name = settings_dict['local']['ios_device_name']
 
