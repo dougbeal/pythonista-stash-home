@@ -50,7 +50,7 @@ try:
         local = {}
         settings_dict['local'] = local
 
-    if local['ios_device_name']:
+    if 'ios_device_name' in local:
         name = local['ios_device_name']
     else:
         name = dialogs.text_dialog(title='name this device', text='')
