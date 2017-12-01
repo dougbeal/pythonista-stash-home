@@ -56,6 +56,12 @@ try:
         name = dialogs.text_dialog(title='name this device', text='')
         local['ios_device_name'] = name
 
+    items = [
+        { 'title': 'name' },
+        { 'title': 'address' },
+        ]
+    dialogs.form_dialog(title='remote machines', items=items, move=True, delete=True)
+    
     print name
     
     #os.path.isfile(path)    
