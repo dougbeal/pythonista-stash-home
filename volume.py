@@ -30,15 +30,21 @@ settings_dict = {
 # turn off, reboot, etc. your iOS device
 # several minutes, hours, days, months later, you can run:
 
-with open(os.path.join(directory, settings_file_name)) as in_file:
-    new_dict = json.load(in_file)  # your data has been read in from file into a new dict
+try: 
+    with open(os.path.join(directory, settings_file_name)) as in_file:
+        settings_dict = json.load(in_file)  # your data has been read in from file into a new dict
+except IOError:
+    settings_dict = None
 
 
-name = settings_dict['local']['ios_device_name']
+name = None
 
-if not name:
-    dialogs.text_dialog(title='name this device',fields=[{'type':'text','title':'name'}])
+with settings_dict['local']['ios_device_name'] as sname:
+    name = sname
+else
+    name - dialogs.text_dialog(title='name this device',fields=[{'type':'text','title':'name'}])
 
+print name
     
 #os.path.isfile(path)    
 print(new_dict)
