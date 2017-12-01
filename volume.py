@@ -30,7 +30,7 @@ settings_dict = {
 # turn off, reboot, etc. your iOS device
 # several minutes, hours, days, months later, you can run:
 
-with open(os.path.join(directory, settings_file_name) as in_file:
+with open(os.path.join(directory, settings_file_name)) as in_file:
     new_dict = json.load(in_file)  # your data has been read in from file into a new dict
 
 
