@@ -57,7 +57,8 @@ try:
         { 'title': 'name' },
         { 'title': 'address' },
         ]
-    dialogs.edit_list_dialog(title='remote machines', items=items, move=True, delete=True)
+    source = ui.ListDataSource(items)
+    dialogs.edit_list_dialog(title='remote machines', items=source, move=True, delete=True)
     
     print name
     
