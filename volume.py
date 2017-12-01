@@ -63,5 +63,6 @@ try:
 
     _stash('ls')
 finally:
+    print("all done, writing out settings")
     with open(settings_file_path, 'w') as out_file:
         json.dump(settings_dict, out_file)
