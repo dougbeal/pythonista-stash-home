@@ -5,7 +5,7 @@ import json
 import ui
 import os
 
-directory = '~/Documents/pythonista-stash-home'
+directory = os.path.expanduser('~/Documents/pythonista-stash-home')
 settings_file_name = 'settings_dict.json'
 
 settings_dict = {
