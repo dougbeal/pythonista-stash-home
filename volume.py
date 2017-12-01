@@ -36,6 +36,7 @@ try:
     try: 
         with open(settings_file_path) as in_file:
             settings_dict = json.load(in_file)  # your data has been read in from file into a new dict
+            print(settings_dict)
     except IOError:
         print("No settings found")
         settings_dict = {}
