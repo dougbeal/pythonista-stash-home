@@ -30,12 +30,14 @@ settings_dict = {
 # turn off, reboot, etc. your iOS device
 # several minutes, hours, days, months later, you can run:
 settings_file_path = os.path.join(directory, settings_file_name)
-print("settings_file_name %s" % (settings_file_name))
+print("settings_file_path %s" % (settings_file_path))
 try:
+    settings_dict = None
     try: 
         with open(settings_file_path) as in_file:
             settings_dict = json.load(in_file)  # your data has been read in from file into a new dict
     except IOError:
+        print("No settings found")
         settings_dict = {}
         
 
