@@ -39,17 +39,13 @@ try:
             print(settings_dict)
     except IOError:
         print("No settings found")
-        settings_dict = {}
+        settings_dict = { 'local': {} }
         
 
     
     name = None
         
-    local = None
-
-    if not local:
-        local = {}
-        settings_dict['local'] = local
+    local = settings_dict['local']
 
     if 'ios_device_name' in local:
         name = local['ios_device_name']
